@@ -1,0 +1,112 @@
+body {
+  background-color: black;
+  font-family: "Montserrat", sans-serif;
+}
+
+
+
+.navigation {
+  display: flex;
+  padding-top: 30px;
+  padding-right: 50px;
+  padding-bottom: 30px;
+  padding-left: 50px;
+  align-items: center;
+  background-color: transparent;
+}
+
+.navigation-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+}
+
+.navigation-item {
+  padding-top: 9px;
+  padding-bottom: 9px;
+  opacity: 0.6;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+
+
+.navigation-item:hover {
+  background-color: #666666;
+}
+
+
+.navigation-wrap {
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+.nav-mainbtn {
+  margin-left: 10px;
+  padding-top: 12px;
+  padding-right: 25px;
+  padding-bottom: 12px;
+  padding-left: 25px;
+  border-radius: 999px;
+  background-color: #1a1b1f;
+
+  color: white;
+  font-size: 12px;
+  
+  letter-spacing: 2.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+
+.header {
+  height: 500px;
+}
+
+.header-wrap {
+  position: relative;
+  height: 100%;
+}
+
+.bg-header {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  background-image: url(assets/grid_wave.gif);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-size: auto;
+  opacity: 0.1;
+}
+
+.header-content {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-text {
+  color: white;
+}
