@@ -3,35 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ad Agency</title>
+    <title>Spark Digital Agency</title>
 
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
 </head>
 <body>
     <div>
-        <div class="navigation">
-            <div class="navigation-items">
-                <a href="/" aria-current="page" class="logo">
-                    <img src="" width="65" alt="" class="logoimg" />
-                </a>
-                <div class="navigation-wrap">
-                    <nav role="navigation">
-                        <a href="" class="navigation-item">About</a><a href="" class="navigation-item">Projects</a><a href="" class="navigation-item">Services</a>
-                        <button class="nav-mainbtn">Let's connect</button>
-                    </nav>
+      <div class="navigation">
+        <div class="navigation-items">
+            <a href="/" aria-current="page" class="logo">
+                <img src="" width="65" alt="" class="logoimg" />
+            </a>
+            <div class="navigation-wrap">
+              <nav class="navbar navbar-expand-lg navbar-dark mb-5 mt-3">
+                <div class="container">
+                    <h3 class="text-white">Spark Digital Agency</h3>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link navigation-item" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link navigation-item" href="#">Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link navigation-item" href="#">Services</a>
+                            </li>
+                            <li class="nav-item">
+                              <button onclick="openModal()" data-toggle="modal" data-target="#contact" class="nav-mainbtn">Let's connect</button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+            </nav>
             </div>
         </div>
+    </div>
+    
+    <div class="modal fade" id="contact" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title" id="exampleModalLabel">Let's connect</h5>
+          </div>
+          <form>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="email1">Email address</label>
+                <input type="email" class="form-control" id="email1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We will respond to this email</small>
+              </div>
+              <div class="form-group mt-3">
+                <label for="msg">Message</label>
+                <input type="text" class="form-control" id="msg" placeholder="Enter your message...">
+              </div>
+            </div>
+            <div class="modal-footer border-top-0 d-flex justify-content-center"> 
+              <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
         
         <div class="header">
             <div class="header-wrap">
                 <div class="bg-header"></div>
                 <div class="header-content">
-                    <h1 class="header-text">Digital Marketing Agency</h1>
+                    <h1 class="header-text">Empower Your Digital Presence</h1>
                 </div>
             </div>
         </div>
@@ -45,7 +93,7 @@
                         <img src="./assets/seo.png" class="card-img-top" alt="...">
                         <div class="card-body text-white">
                           <h5 class="card-title">SEO</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <p class="card-text">Boost your online visibility and reach.</p>
                         </div>
                       </div>
                   </div>
@@ -54,7 +102,7 @@
                         <img src="./assets/analytics.png" class="card-img-top" alt="...">
                         <div class="card-body text-white">
                           <h5 class="card-title">Analytics</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <p class="card-text">Leverage insights for informed decisions.</p>
                         </div>
                       </div>
                   </div>
@@ -63,7 +111,7 @@
                         <img src="./assets/googleads.png" class="card-img-top" alt="...">
                         <div class="card-body text-white">
                           <h5 class="card-title">Google Ads</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <p class="card-text">Drive targeted traffic to your website.</p>
                         </div>
                       </div>
                   </div>
@@ -72,15 +120,53 @@
                         <img src="./assets/socialmedia.png" class="card-img-top" alt="...">
                         <div class="card-body text-white">
                           <h5 class="card-title">Social Media Marketing</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <p class="card-text">Engage and expand your online community.</p>
                         </div>
                       </div>
                   </div>
                 </div>
               </div>
         </section>
+
+        <section class="client-logos">
+          <h2>Our Partners</h2>
+          <ul>
+            <li><a href="#"><img src="./assets/google.png" alt="BDG Health Group"></a></li>
+            <li><a href="#"><img src="./assets/spotify.webp" alt="AMS Fandom"></a></li>
+            <li><a href="#"><img src="./assets/netflix.svg" alt="Kargo"></a></li>
+            <li><a href="#"><img src="./assets/bbc.png" alt="Genius"></a></li>
+          </ul>
+        </section>
+        
+
+        <footer class="mt-5">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-12 text-center">
+                <h2 class="footer-heading"><a href="#" class="text-decoration-none text-white">Spark Digital Agency</a></h2>
+                <p class="footer-links mt-4">
+                  <a class="text-decoration-none text-white" href="#">Home</a>
+                  <a class="text-decoration-none text-white" href="#">About</a>
+                  <a class="text-decoration-none text-white" href="#">Projects</a>
+                  <a class="text-decoration-none text-white" href="#">Services</a>
+                  <a class="text-decoration-none text-white" href="#">Contact</a>
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="text-center">
+                <p class="text-white">
+                  © 2024 Spark Digital Agency. All rights reserved.
+                </p>
+              </div>
+            </div>
+          </div>
+        </footer>
+        
         
     </div>  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
