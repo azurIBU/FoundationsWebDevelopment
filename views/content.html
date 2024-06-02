@@ -1,0 +1,33 @@
+
+<div class="flex gap-5 items-center">
+    <h1 class="font-bold text-2xl">Content Toggle</h1>
+</div>
+
+<div class="mt-10"></div>
+<button id="toggleBtn" class="px-4 py-2 bg-blue-500 text-white rounded-md">Show/Hide FAQ</button>
+
+<div id="faqContainer" class="container px-4 mt-10">
+
+    <div class="faq-item bg-white shadow-md rounded-lg mb-4 p-4">
+        <div class="faq-question font-semibold cursor-pointer">Question 1</div>
+        <div class="faq-answer hidden mt-2">Answer 1</div>
+    </div>
+
+    <div class="faq-item bg-white shadow-md rounded-lg mb-4 p-4">
+        <div class="faq-question font-semibold cursor-pointer">Question 2</div>
+        <div class="faq-answer hidden mt-2">Answer 2</div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#toggleBtn').click(function () {
+            $('#faqContainer').toggle();
+        });
+
+        $('.faq-question').click(function () {
+            $(this).next('.faq-answer').slideToggle();
+        });
+    });
+</script>

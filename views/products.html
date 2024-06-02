@@ -1,0 +1,160 @@
+
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-10 container mx-auto p-5">
+        <button id="addProductBtn" class="mb-4 px-4 py-2 bg-blue-500 text-white rounded-lg">Add Product</button>
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Product name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Color
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Category
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Price
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="productTableBody">
+                <!-- Products will be loaded here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="productFormContainer" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
+        <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+            <form id="productForm" class="space-y-6">
+                <div>
+                    <label for="productName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product
+                        Name</label>
+                    <input type="text" id="productName" name="productName" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
+                </div>
+                <div>
+                    <label for="color" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Color</label>
+                    <input type="text" id="color" name="color" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
+                </div>
+                <div>
+                    <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
+                    <input type="text" id="category" name="category" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
+                </div>
+                <div>
+                    <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
+                    <input type="number" id="price" name="price" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
+                </div>
+                <input type="hidden" id="productId">
+                <div class="flex items-center justify-end space-x-4">
+                    <button type="button" id="cancelBtn" class="px-4 py-2 bg-gray-300 rounded-lg">Cancel</button>
+                    <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-lg">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        
+        $(document).ready(function () {
+            // Sample JSON data
+            const productData = [
+                { id: 1, name: "Apple MacBook Pro 17\"", color: "Silver", category: "Laptop", price: "$2999" },
+                { id: 2, name: "Microsoft Surface Pro", color: "White", category: "Laptop PC", price: "$1999" },
+                { id: 3, name: "Magic Mouse 2", color: "Black", category: "Accessories", price: "$99" },
+                { id: 4, name: "Google Pixel Phone", color: "Gray", category: "Phone", price: "$799" },
+                { id: 5, name: "Apple Watch 5", color: "Red", category: "Wearables", price: "$999" }
+            ];
+
+            // Function to load product data into the table
+            function loadProducts() {
+                let rows = "";
+                productData.forEach(product => {
+                    rows += `<tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">${product.name}</th>
+                        <td class="px-6 py-4">${product.color}</td>
+                        <td class="px-6 py-4">${product.category}</td>
+                        <td class="px-6 py-4">${product.price}</td>
+                        <td class="px-6 py-4">
+                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline edit-btn" data-id="${product.id}">Edit</a>
+                            <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline delete-btn" data-id="${product.id}">Delete</a>
+                        </td>
+                    </tr>`;
+                });
+                $("#productTableBody").html(rows);
+            }
+
+            loadProducts();
+
+            // Show form modal
+            $("#addProductBtn").click(function () {
+                $("#productFormContainer").removeClass("hidden");
+                $("#productForm")[0].reset();
+                $("#productId").val('');
+            });
+
+            // Hide form modal
+            $("#cancelBtn").click(function () {
+                $("#productFormContainer").addClass("hidden");
+            });
+
+            // Form submission
+            $("#productForm").validate({
+                submitHandler: function (form) {
+                    const id = $("#productId").val();
+                    const name = $("#productName").val();
+                    const color = $("#color").val();
+                    const category = $("#category").val();
+                    const price = $("#price").val();
+                    if (id) {
+                        const product = productData.find(p => p.id == id);
+                        product.name = name;
+                        product.color = color;
+                        product.category = category;
+                        product.price = `$${price}`;
+                        toastr.success('Product updated successfully');
+                    } else {
+                        const newProduct = {
+                            id: productData.length + 1,
+                            name: name,
+                            color: color,
+                            category: category,
+                            price: `$${price}`
+                        };
+                        productData.push(newProduct);
+                        toastr.success('Product added successfully');
+                    }
+                    loadProducts();
+                    $("#productFormContainer").addClass("hidden");
+                }
+            });
+
+            // Edit product
+            $(document).on("click", ".edit-btn", function () {
+                const id = $(this).data("id");
+                const product = productData.find(p => p.id == id);
+                $("#productId").val(product.id);
+                $("#productName").val(product.name);
+                $("#color").val(product.color);
+                $("#category").val(product.category);
+                $("#price").val(product.price.replace('$', ''));
+                $("#productFormContainer").removeClass("hidden");
+            });
+
+            // Delete product
+            $(document).on("click", ".delete-btn", function () {
+                const id = $(this).data("id");
+                if (confirm("Are you sure you want to delete this product?")) {
+                    const index = productData.findIndex(p => p.id == id);
+                    if (index > -1) {
+                        productData.splice(index, 1);
+                        toastr.success('Product deleted successfully');
+                        loadProducts();
+                    }
+                }
+            });
+        });
+    </script>
+
