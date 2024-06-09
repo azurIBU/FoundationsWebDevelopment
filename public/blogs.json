@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "title": "Understanding React Hooks",
+      "excerpt": "React Hooks are functions that let you use state and other React features without writing a class...",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/React_Logo_SVG.svg/1200px-React_Logo_SVG.svg.png",
+      "content": "In this post, we will delve deep into React Hooks and understand how they work..."
+    },
+    {
+      "id": 2,
+      "title": "JavaScript ES6 Features",
+      "excerpt": "ES6 brings new syntax and new awesome features to make your code more modern and readable...",
+      "imageUrl": "https://ih1.redbubble.net/image.344706868.3811/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.u3.jpg",
+      "content": "Let's explore some of the most important features introduced in ES6..."
+    },
+    {
+      "id": 3,
+      "title": "CSS Grid Layout",
+      "excerpt": "CSS Grid Layout is the most powerful layout system available in CSS. It is a 2-dimensional system...",
+      "imageUrl": "https://miro.medium.com/v2/resize:fit:800/1*e6YDzBbaBzS9hmoOJv6rmw.png",
+      "content": "CSS Grid Layout enables us to create complex web layouts with ease..."
+    },
+    {
+      "id": 4,
+      "title": "Node.js for Beginners",
+      "excerpt": "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It allows you to run JavaScript on the server...",
+      "imageUrl": "https://miro.medium.com/v2/resize:fit:900/1*TY9uBBO9leUbRtlXmQBiug.png",
+      "content": "In this post, we will cover the basics of Node.js and how to get started..."
+    },
+    {
+      "id": 5,
+      "title": "Introduction to TypeScript",
+      "excerpt": "TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. It offers type safety and modern JavaScript features...",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
+      "content": "This post will introduce you to TypeScript and its key features..."
+    }
+  ]
+  
